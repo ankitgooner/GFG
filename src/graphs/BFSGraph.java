@@ -40,18 +40,18 @@ public class BFSGraph {
 	public static void main(String a[]){
 		
 		Graph g=new Graph(7);
-	g.addEdge(1, 4);
+/*	g.addEdge(1, 4);
 		g.addEdge(2, 1);
 		g.addEdge(3, 2);
 		g.addEdge(4, 5);
 		g.addEdge(5, 4);
-		g.addEdge(6, 3);
-		/*g.addEdge(0, 1);
+		g.addEdge(6, 3);*/
+		g.addEdge(0, 1);
         g.addEdge(0, 2);
         g.addEdge(1, 2);
         g.addEdge(2, 0);
         g.addEdge(2, 3);
-        g.addEdge(3, 3);*/
+        g.addEdge(3, 3);
 		BFS(g,7,2);
 		
 		
@@ -77,6 +77,7 @@ public void setAdj(LinkedList<Integer>[] adj) {
 }
 public void addEdge(int v,int w){
 adj[v].add(w);
+
 	
 }
 }
