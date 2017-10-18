@@ -5,13 +5,17 @@ import java.util.LinkedList;
 public class BFSGraph {
 	
 	
-	public static void BFS(Graph g,int V,int v){
+	public static void BFS(Graph g,int V,int v,int dest){
 		
 		boolean []Visited=new boolean[V];
 		
 		Visited[v]=true;
 		
-		
+		if(v==dest){
+			System.out.println("here");
+			return;
+			
+		}
 		 LinkedList<Integer> queue = new LinkedList<Integer>();
 		 
 		 queue.add(v);
@@ -39,7 +43,7 @@ public class BFSGraph {
 
 	public static void main(String a[]){
 		
-		Graph g=new Graph(7);
+		Graph g=new Graph(6);
 /*	g.addEdge(1, 4);
 		g.addEdge(2, 1);
 		g.addEdge(3, 2);
@@ -47,12 +51,12 @@ public class BFSGraph {
 		g.addEdge(5, 4);
 		g.addEdge(6, 3);*/
 		g.addEdge(0, 1);
-        g.addEdge(0, 2);
+        g.addEdge(0, 5);
+        g.addEdge(1, 3);
+        g.addEdge(2, 4);
         g.addEdge(1, 2);
-        g.addEdge(2, 0);
-        g.addEdge(2, 3);
-        g.addEdge(3, 3);
-		BFS(g,7,2);
+        g.addEdge(4, 5);
+		BFS(g,6,0,5);
 		
 		
 	}
@@ -77,6 +81,7 @@ public void setAdj(LinkedList<Integer>[] adj) {
 }
 public void addEdge(int v,int w){
 adj[v].add(w);
+adj[w].add(v);
 
 	
 }
